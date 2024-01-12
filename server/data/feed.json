@@ -21,7 +21,7 @@
       "logo": "http://localhost:4000/images/burger-king-logo.png"
     },
     "name": "",
-     "banner_image": "http://localhost:4000/images/bk-banner.jpeg",
+    "banner_image": "http://localhost:4000/images/bk-banner.jpeg",
     "description": "Donec volutpat accumsan fringilla. Sed in ante consectetur, gravida lectus non, iaculis mauris. Vivamus sed pretium odio, efficitur convallis mauris. Vestibulum bibendum libero metus, ac gravida ligula pretium eget. Nam ac mollis urna, vel accumsan massa. Donec non pellentesque velit. Morbi in tortor placerat erat semper dapibus sed eu ipsum. Integer ultricies dapibus tempor. Morbi quam risus, mollis et justo id, porttitor blandit ante. Nunc pretium orci a ultricies venenatis. Aliquam a tellus ut augue dictum venenatis. Sed at ex urna. Curabitur scelerisque varius libero quis pellentesque. Morbi laoreet, justo quis bibendum luctus, dolor massa interdum velit, a rutrum mi elit id nisl. Aliquam eu lacus purus.",
     "feed_title": "What's your favourite sandwich ?",
     "banner_text": "What's your favourite sandwich ?",
