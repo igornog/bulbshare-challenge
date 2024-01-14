@@ -1,20 +1,23 @@
 import React from 'react';
 import Box from '@mui/material/Box/Box';
 import { CardHeader } from './cardHeader';
-import { Skeleton, Stack, Typography, useMediaQuery } from '@mui/material';
-import { BannerBackground, StyledImage } from './styles';
+import { Typography, useMediaQuery } from '@mui/material';
+import { BannerBackground, StyledBox, StyledImage } from './styles';
 import { CardProps } from './types';
 
 export const Card = React.forwardRef((props: CardProps, ref) => {
   const isMobile = useMediaQuery('(max-width:1079px)');
 
   return (
-    <Box
+    <StyledBox
       ref={ref}
       width={'100%'}
       borderRadius={'4px'}
       height={'auto'}
       boxShadow={'0px 4px 4px rgba(0, 0, 0, 0.2)'}
+      onClick={() => {
+        props.setFeedSelected(props.feed);
+      }}
     >
       <CardHeader
         brandName={props.brandName}
@@ -35,6 +38,6 @@ export const Card = React.forwardRef((props: CardProps, ref) => {
           <StyledImage bannerImage={props.bannerImage} />
         </Box>
       </Box>
-    </Box>
+    </StyledBox>
   );
 });

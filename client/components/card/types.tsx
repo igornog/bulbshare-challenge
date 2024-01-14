@@ -1,5 +1,7 @@
 export interface CardProps {
   ref?: any;
+  feed: any;
+  setFeedSelected: React.Dispatch<React.SetStateAction<string>>;
   isLoading?: boolean;
   briefRef: string;
   brandName: string;

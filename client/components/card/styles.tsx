@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box/Box';
 import styled from 'styled-components';
 
 export const StyledImage = styled.img<{
@@ -24,4 +25,18 @@ export const BannerBackground = styled.div<{
   position: absolute;
   bottom: 5%;
   left: 0;
+`;
+
+export const StyledBox = styled(Box)`
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: transform 0.2s ease-in-out;
+  }
 `;
