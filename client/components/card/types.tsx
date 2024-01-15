@@ -1,7 +1,9 @@
+import { FeedItem } from '../../utils/types/feedItem';
+
 export interface CardProps {
   ref?: any;
-  feed: any;
-  setFeedSelected: React.Dispatch<React.SetStateAction<string>>;
+  feed: FeedItem;
+  setFeedSelected: React.Dispatch<React.SetStateAction<FeedItem>>;
   isLoading?: boolean;
   briefRef: string;
   brandName: string;

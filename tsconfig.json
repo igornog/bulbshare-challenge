@@ -19,6 +19,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["client/**/*.ts", "client/**/*.tsx"],
   "exclude": []
 }

@@ -1,7 +1,7 @@
 import { baseURL, httpRequest } from '.';
 
-const getComments = async (id: number) => {
-  httpRequest(fetch(`${baseURL}/comments/${id}`));
+const getComments = async (briefRef: string) => {
+  return httpRequest(fetch(`${baseURL}/comments?briefRef=${briefRef}`));
 };
 
 export { getComments };

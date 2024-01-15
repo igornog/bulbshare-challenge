@@ -3,9 +3,10 @@ import { Card } from '../../components/card';
 import { getFeed } from '../../utils/services/getFeed';
 import { useMediaQuery, Box } from '@mui/material';
 import { CardSkeleton } from './utils/cardSkeleton';
+import { FeedItem } from '../../utils/types/feedItem';
 
 interface HomeProps {
-  setFeedSelected: React.Dispatch<React.SetStateAction<string>>;
+  setFeedSelected: React.Dispatch<React.SetStateAction<FeedItem>>;
 }
 
 export const Feed: React.FC<HomeProps> = ({ setFeedSelected }) => {
@@ -19,16 +20,15 @@ export const Feed: React.FC<HomeProps> = ({ setFeedSelected }) => {
     const response = await getFeed(start ?? 0);
     const allFeed = new Set([...feed, ...response.data]);
 
-    console.log('allFeed ========>', allFeed);
-    setFeed([...allFeed]);
+    setFeed([...Array.from(allFeed)]);
 
     setLoading(false);
   };
 
   useEffect(() => {
-    console.log('FIRST USEEFFECT ========>');
     setStart(0);
     loadFeed();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const observer = useRef(
@@ -70,9 +70,9 @@ export const Feed: React.FC<HomeProps> = ({ setFeedSelected }) => {
       padding={isMobile ? '50px 10vw' : '50px 20vw'}
       margin={'0 0 10vh'}
     >
-      {feed.map((item: any, i: number) => {
+      {feed.map((item: FeedItem, i: number) => {
         return i === feed.length - 1 && (start ?? 0) <= feed.length ? (
-          <>
+          <Box key={item.briefref}>
             <Card
               ref={setLastElement}
               setFeedSelected={setFeedSelected}
@@ -84,9 +84,10 @@ export const Feed: React.FC<HomeProps> = ({ setFeedSelected }) => {
               bannerText={item.banner_text}
             />
             <CardSkeleton />
-          </>
+          </Box>
         ) : (
           <Card
+            key={item.briefref}
             setFeedSelected={setFeedSelected}
             feed={item}
             briefRef={item.briefref}

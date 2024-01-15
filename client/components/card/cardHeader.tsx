@@ -46,7 +46,6 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
         </Typography>
       </Box>
       <Link
-        // href={`https://briefs.co/${briefRef}`}
         target={'_blank'}
         underline={'none'}
         sx={{
@@ -63,7 +62,7 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
           fontSize={isMobile ? '8px' : '16px'}
           fontWeight={'bold'}
           textTransform={'uppercase'}
-          color={'#3333FF'}
+          color={'#126AE8'}
           padding={'10px 0 10px 20px'}
         >
           Join Brief Now
